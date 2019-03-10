@@ -1,0 +1,22 @@
+{
+  "name": "vicard-client",
+  "version": "1.0.0",
+  "description": "my desc",
+  "main": "main.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/b-salehi/vicard-client.git"
+  },
+  "keywords": [
+    "vicard"
+  ],
+  "author": "Bahman Salehi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/b-salehi/vicard-client/issues"
+  },
+  "homepage": "https://github.com/b-salehi/vicard-client#readme"
+}
