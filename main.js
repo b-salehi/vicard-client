@@ -9,7 +9,7 @@ console.log('main process working');
 
 function createWindow() {
     // Create the browser window.
-    mainWindow = new BrowserWindow({ width: 800, height: 600 });//, show: false
+    mainWindow = new BrowserWindow({ width: 800, height: 600, backgroundColor: 'lightgray', show: false });
 
     // and load the index.html of the app.
     mainWindow.loadURL(url.format({
@@ -17,6 +17,11 @@ function createWindow() {
         protocol: 'file:',
         slashes: true
     }));
+
+    mainWindow.once("ready-to-show", () => {
+        mainWindow.setMenu(null)
+        mainWindow.show()
+    })
 
     // Emitted when the window is closed.
     mainWindow.on('closed', () => {
