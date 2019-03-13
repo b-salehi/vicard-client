@@ -4,16 +4,34 @@ const url = require('url');
 
 const { app, BrowserWindow } = electron;
 
+//import { app, BrowserWindow, screen } from 'electron';
+//import * as path from 'path';
+//import * as url from 'url';
+
 let mainWindow;
 console.log('main process working');
 
 function createWindow() {
+	const size = electron.screen.getPrimaryDisplay().workAreaSize;
+	
     // Create the browser window.
-    mainWindow = new BrowserWindow({ width: 800, height: 600, backgroundColor: 'lightgray', show: false });
+    mainWindow = new BrowserWindow({
+       	x: 0,
+        y: 0,
+        //width: 800, height: 600, 
+    	width: size.width,
+    	height: size.height,
+        backgroundColor: 'lightgray', 
+        show: false,
+        webPreferences: {
+            nodeIntegration: true,
+            defaultEncoding: 'UTF-8'
+        }
+     });
 
     // and load the index.html of the app.
     mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'index.html'),
+        pathname: path.join(__dirname, 'app', 'index.html'),
         protocol: 'file:',
         slashes: true
     }));
